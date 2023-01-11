@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<link href="{% static 'css/style4.css' %}" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<section id="values" class="values" style="background-color: #e6fcfc;">
+
+    <div class="container" style="margin-top: 4%;">
+        <div class="row gy-4">
+            <div class="container">
+                <input class="input" placeholder="Найти лекарства" type="text" id="lname" autocomplete="off"
+                       onkeyup="filterBrands()" onsearch="filterBrands()" name="lname">
+            </div>
+            <div class="body-container">
+                <div class="row gy-4">
+                    {% for drug in drugs %}
+                    {%if drug.image %}
+                    <div class="brand_container" style="background-color: white">
+                        <div class='cost'>
+                            <img src="{{ drug.image.url }}" class="drugs">
+                            <p class='cash'>{{ drug.cost }}</p>
+                        </div>
+                        <h3 class="brand-name">{{ drug.name }}</h3>
+                        <h4><strong>Аптека: </strong><a href="https://biosfera.kz/">{{ drug.pharmacy }}</a></h4>
+                        <p><strong>Адрес: </strong> {{ drug.address }}</p>
+                        <a href="" class="btn btn-primary px-4 py-3"
+                           style="background-color: #51eaea; border: #51eaea; color: black;">
+                            <button id="bt">Показать телефон</button>
+                        </a>
+                        <script>
+                            document.getElementById('bt').onclick = function () {
+                                swal("Here's a message!");
+                            };
+                        </script>
+                    </div>
+                    {%endif%}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="{% static 'js/main2.js' %}"></script>
+{% endblock %}

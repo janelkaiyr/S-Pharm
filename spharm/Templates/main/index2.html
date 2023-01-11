@@ -1,0 +1,64 @@
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block extrahead %}
+<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+{% endblock %}
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap3-dialog/1.34.7/js/bootstrap-dialog.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<link href="{% static 'css/style7.css' %}" rel="stylesheet">
+
+<div class="container">
+    <nav class="side-nav">
+        <ul class="nav-menu">
+            <li class="nav-item"><a href="#"><img
+                    src="https://o.remove.bg/downloads/4f4283d3-b0cd-4d81-88d7-acc4a7cdb9f4/%D0%91%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA_%D1%82%D0%B0%D0%B1%D0%BB%D0%B5%D1%82%D0%BE%D0%BA__2_-removebg-preview.png"
+                    class="rounded-circle" alt="Cinque Terre"
+                    width="40" height="40" style="margin-left: 23px"><span
+                    class="menu-text">Главная</span></a></li>
+            <li class="nav-item"><a href="#"><img
+                    src="https://o.remove.bg/downloads/c19cff73-7847-4b5f-bb65-8d274d150c75/165-1658581_search-icon-transparent-white-searching-icon-white-png-removebg-preview.png"
+                    class="rounded-circle" alt="Cinque Terre"
+                    width="40" height="40" style="margin-left: 15px"><span class="menu-text">Поиск</span></a></li>
+            <li class="nav-item"><a href="#"><img
+                    src="https://bsiengr.com/wp-content/uploads/2017/03/BSI-Icon-Specialty-Chemicals.png"
+                    class="rounded-circle" alt="Cinque Terre"
+                    width="40" height="40" style="margin-left: 15px"><span class="menu-text" style="text-align: center">Аналоги</span></a>
+            </li>
+            <li class="nav-item"><a href="#"><img
+                    src="https://lh3.googleusercontent.com/proxy/02X3J1d0sXnMJfNjA89vDzRyA-M-dz0AVlQRE57MbrK0E_oKngFGyu5fG0wDiox41qGggAht5QoXxlfZ228m-RDVLkdEtRXxx7jpOavRRhUD"
+                    class="rounded-circle" alt="Cinque Terre"
+                    width="40" height="40" style="margin-left: 15px"><span class="menu-text">Аптеки</span></a></li>
+            <li class="nav-item"><a href="#"><img
+                    src="https://o.remove.bg/downloads/30c267d2-9ebc-4e67-bf4c-68482e58e970/%D0%91%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9_%D0%BF%D0%BE%D0%B8%D1%81%D0%BA_%D1%82%D0%B0%D0%B1%D0%BB%D0%B5%D1%82%D0%BE%D0%BA__4_-removebg-preview.png"
+                    class="rounded-circle" alt="Cinque Terre"
+                    width="40" height="40" style="margin-left: 15px"><span class="menu-text">Доставка</span></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div class="head">
+    <h1 class="header">S-Pharm</h1>
+    <form action="#">
+        <div class="select-box">
+            <label for="select-box1" class="label select-box1"><span class="label-desc">Choose your country</span>
+            </label>
+            <select id="select-box1" class="select">
+                <option value="Choice 1">Falkland Islands</option>
+                <option value="Choice 2">Germany</option>
+                <option value="Choice 3">Neverland</option>
+            </select>
+        </div>
+    </form>
+</div>
+
+<script src="{% static 'js/main6.js' %}"></script>
+
+{% endblock %}

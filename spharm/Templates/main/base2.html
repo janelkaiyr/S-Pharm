@@ -1,0 +1,89 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>S-Pharm</title>
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet">
+    <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+    <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style2.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style3.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a href="{% url 'main'%}" class="logo d-flex align-items-center">
+            <img src="" alt="">
+            <span>S-Pharm</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link scrollto" href="#services" style="font-family: FontAwesome">О нас</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'map' %}"
+                       style="font-family: FontAwesome,serif">Аптеки</a></li>
+                <li><a class="nav-link scrollto" href="{%url 'all_drug'%}"
+                       style="font-family: FontAwesome">Лекарства</a></li>
+                <li><a class="nav-link scrollto" href="{% url 'analog' %}" style="font-family: FontAwesome">Аналоги</a>
+                </li>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="search-box">
+                        <input type="search" class="search-box-input" placeholder="Найти лекарства"
+                               name="address">
+                        <button class="search-box-btn">
+                            <i class="search-box-icon material-icons"><i class="bi bi-search"
+                                                                         style="color: white;"></i></i>
+                        </button>
+                    </div>
+                </form>
+    </div>
+
+    </ul>
+    <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+    </div>
+</header><!-- End Header -->
+
+<main class="main">
+    {%block content%}{% endblock %}
+</main>
+
+
+<!-- Vendor JS Files -->
+<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
+<script src="{% static 'vendor/aos/aos.js' %}"></script>
+<script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
+<script src="{% static 'vendor/purecounter/purecounter.js' %}"></script>
+<script src="{% static 'vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+<script src="{% static 'vendor/glightbox/js/glightbox.min.js' %}"></script>
+
+<!-- Template Main JS File -->
+<script src="{% static 'js/main.js' %}"></script>
+{% block js %}{% endblock %}
+</main>
+</body>
+</html>

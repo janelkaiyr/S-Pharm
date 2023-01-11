@@ -1,0 +1,169 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+
+<meta charset="utf-8">
+<link href="{% static 'css/style5.css' %}" rel="stylesheet">
+<!--
+<div id="myBtnContainer" style="margin-top: 10%">
+    <button class="btn active" onclick="filterSelection('all')">Все</button>
+    <button class="btn" onclick="filterSelection('nature')"> Простуда</button>
+    <button class="btn" onclick="filterSelection('cars')"> Болезни округа пищеварение</button>
+    <button class="btn" onclick="filterSelection('people1')"> Сердце</button>
+    <button class="btn" onclick="filterSelection('people2')"> Кашель</button>
+    <button class="btn" onclick="filterSelection('people3')"> Витамины для иммунитета</button>
+
+</div>
+-->
+<div class="row">
+    <!--
+    {% for d in drug %}
+    {% if d.illness_id == 1 %}
+    <div class="column nature">
+        <div class="content">
+            <img src="{{ d.image.url }}" alt="Mountains"
+                 style="width:100%; height: 50%">
+            <h4>{{ d.name }}</h4>
+        </div>
+    </div>
+    {% endif %}
+    {% if d.illness_id == 2 %}
+    <div class="column nature">
+        <div class="content">
+            <h4>{{ d.name }}</h4>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <div class="column nature">
+        <div class="content">
+            <img src="https://img-cdn.tinkoffjournal.ru/i/OndFbAfVCL5-hXkNgyzK2Oft8iUUM1MLEjtk8tls878/w:1200/aHR0cHM6Ly9pbWct/Y2RuLnRpbmtvZmZq/b3VybmFsLnJ1Ly0v/Y29sZF9wcmljZV8y/Mi5ucHp0cG9iamlz/dGQuanBn"
+                 alt="Mountains" alt="Lights" style="width:100%;  height: 50%">
+            <h4> Ингаварин 90 </h4>
+        </div>
+    </div>
+    <div class="column nature">
+        <div class="content">
+            <img src="https://uteka.ru/media/1024/6/77/6772c7a7b8942759c4bd9d803e9c1eb7.jpg" alt="Mountains"
+                 alt="Nature" style="width:100%">
+            <h4>Ринза</h4>
+        </div>
+    </div>
+
+    <div class="column people2">
+        <div class="content">
+            <img src="https://фото.монастырёв.рф/s/gi/prod/00/00/25/87/49/lazolvan-600x600.JPG" alt="Car"
+                 style="width:100%">
+            <h4>Лазолван</h4>
+        </div>
+    </div>
+    <div class="column people2">
+        <div class="content">
+            <img src="https://biosfera.kz/image/cache/products/M-002587-320x320.jpg" alt="Car" style="width:100%">
+            <h4>Доктор мом</h4>
+        </div>
+    </div>
+    <div class="column people2">
+        <div class="content">
+            <img src="https://www.gerbion.uz/inc/lib-uz/img/herbion-plantain-syrup-lead.jpg" alt="Car"
+                 style="width:100%">
+            <h4>Гербион</h4>
+        </div>
+    </div>
+
+    <div class="column nature">
+        <div class="content">
+            <img src="https://babytoday.ru/upload/medialibrary/62a/62afece7c9b879c938cb72f3dcd6e6e9.jpg" alt="People"
+                 style="width:100%">
+            <h4>Парацетомол 400 г</h4>
+        </div>
+    </div>
+    <div class="column cars">
+        <div class="content">
+            <img src="https://mozgb.by/wp-content/uploads/2020/08/cb0faf2b71af3f234824dfe863fdcd39.jpg" alt="Car"
+                 style="width:100%">
+            <h4>Мезим Форте 400</h4>
+        </div>
+    </div>
+
+    <div class="column people1">
+        <div class="content">
+            <img src="https://www.renewal.ru/upload/iblock/910/q70ct_108kh60kh35_Asparkam_oborot_min.png.pagespeed.ce.ZDP8U-iGiJ.png"
+                 alt="People" style="width:100%">
+            <h4>Аспаркам</h4>
+        </div>
+    </div>
+    <div class="column people1">
+        <div class="content">
+            <img src="https://thumb.tildacdn.com/tild6265-6530-4137-a465-306439306133/-/resize/760x/-/format/webp/_.png"
+                 alt="People" style="width:100%">
+            <h4>Кардиомагнил</h4>
+        </div>
+    </div>
+    <div class="column people3">
+        <div class="content">
+            <img src="https://consu-med.ru/upload/iblock/3ef/3ef49b652b48cd0228a159274aa2ca5b.jpg" alt="People"
+                 style="width:100%">
+            <h4>Consumen</h4>
+        </div>
+    </div>
+    <div class="column people3">
+        <div class="content">
+            <img src="https://opt-1595218.ssl.1c-bitrix-cdn.ru/upload/iblock/586/586abd5f8f40defd8f8068186a022bae.jpg?1581675865648149"
+                 alt="People" style="width:100%">
+            <h4>Иммунофан</h4>
+        </div>
+    </div>
+    <div class="column people3">
+        <div class="content">
+            <img src="https://tvoymalysh.com.ua/uploads/files/Imupret2.jpg" alt="People" style="width:100%">
+            <h4>Иммупрет</h4>
+        </div>
+    </div>
+ -->
+    <section class="container">
+
+        <h2>Найдите точные лекарства по предназначению</h2>
+
+
+        <div class="d-inline">
+            <select type="search" class="select-table-filter" data-table="order-table">
+                <option value="">Все</option>
+                <option value="простуда">Простуда</option>
+                <option value="сердце">Сердце</option>
+                <option value="кашель">Кашель</option>
+                <option value="сердце">Сердце</option>
+                <option value="Витамины для иммунитета">Витамины для иммунитета</option>
+                <option value="Болезни округа пищеварение">Болезни округа пищеварение</option>
+            </select>
+        </div>
+        <table class="order-table table table-striped" id="exportMe">
+            <thead>
+            <tr>
+                <th>Основное предназначение</th>
+                <th>Лекарства</th>
+                <th>Аптека в наличии</th>
+                <th>Адрес</th>
+                <th>Цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dr in drug %}
+
+            <tr>
+                <td class="info">{{dr.ii_name}}</td>
+                <td>{{dr.name}}</td>
+                <td>{{dr.pharmacy}}</td>
+                <td>{{dr.address}}</td>
+                <td>{{dr.cost}}</td>
+                {% endfor %}
+            </tr>
+            </tbody>
+        </table>
+        <button id="export" class="btn" style="background-color: #34495e; color: white">Export</button>
+    </section>
+
+</div>
+<script src="{% static 'js/main4.js' %}"></script>
+
+{% endblock %}

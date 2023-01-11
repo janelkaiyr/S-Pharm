@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% block content %}
+{% load static %}
+<link href="{% static 'css/style5.css' %}" rel="stylesheet">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <label>Food or Beverage
+                <select name="food_or_beverage" id="fob" class="form-control">
+                    <option value="select">Please Select</option>
+                    <option value="food">Food</option>
+                    <option value="beverage">Beverage</option>
+                </select>
+            </label>
+        </div>
+        <div class="col-md-6">
+            <label>Type
+                <select name="type" id="type" class="form-control">
+                    <option value="select" data-filter='{"food_or_beverage": ""}'>Please Select</option>
+                    <option value="fruit" data-filter='{"food_or_beverage": "food"}'>Fruit</option>
+                    <option value="vegetable" data-filter='{"food_or_beverage": "food"}'>Vegetable</option>
+                    <option value="juice" data-filter='{"food_or_beverage": "beverage"}'>Juice</option>
+                    <option value="nojuice" data-filter='{"food_or_beverage": "beverage"}'>Nojuice</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <ul>
+                <li data-filter='{"food_or_beverage":"food", "type": "vegetable"}'>Tomato</li>
+                <li data-filter='{"food_or_beverage":"food", "type": "vegetable"}'>Broccoli</li>
+                <li data-filter='{"food_or_beverage":"food", "type": "vegetable"}'>Zucchini</li>
+                <li data-filter='{"food_or_beverage":"food", "type": "vegetable"}'>Carrot</li>
+                <li data-filter='{"food_or_beverage": "food", "type": "fruit"}'>Apple</li>
+                <li data-filter='{"food_or_beverage": "food", "type": "fruit"}'>Pineapple</li>
+                <li data-filter='{"food_or_beverage":"beverage", "type": "juice"}'>Applejuice</li>
+                <li data-filter='{"food_or_beverage":"beverage", "type": "juice"}'>Pineapplejuice</li>
+                <li data-filter='{"food_or_beverage":"beverage", "type": "nojuice"}'>Water</li>
+                <li data-filter='{"food_or_beverage":"beverage", "type": "juice"}'>Orangejuice</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/main3.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'main/base.html' %}
+(% load crispy_forms_tags %)
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<style>
+    body {
+        background-image: url("/static/img/trix.png");
+    }
+</style>
+{% load crispy_forms_tags %}
+<h1 style="text-align: center; margin-top: 10%;">Подключайтесь к S-Pharm, выгодно вам, выгодно нам</h1>
+<form method="post" enctype="multipart/form-data"
+      style="margin-top: 5%; width: 80%; margin-left: auto; margin-right: auto"
+      class="col-xl-8">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-6">
+            {{ form.pharm_name|as_crispy_field }}
+        </div>
+        <div class="col-6">
+            {{ form.pharm_email|as_crispy_field }}
+        </div>
+        {{ form.pharm_phone|as_crispy_field }}
+        {{ form.document|as_crispy_field }}
+    </div>
+    <button type="submit" class="btn btn-success" style="margin-right: auto; margin-left: auto">Присоединиться</button>
+</form>
+
+{% endblock %}

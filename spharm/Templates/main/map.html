@@ -1,0 +1,36 @@
+{% block content %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<link href="{% static 'css/style9.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<link href="{% static 'css/style10.css' %}" rel="stylesheet" xmlns="http://www.w3.org/1999/html">
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<body style="background-color: #F4F9F9">
+
+<div class="sidebar">
+    <div class="heading">
+        <h1>Наши Аптеки</h1>
+    </div>
+    <div id="listings" class="listings">
+        <script src="https://kit.fontawesome.com/d97b87339f.js" crossorigin="anonymous"></script>
+        <form method="post">
+            {%csrf_token%}
+            <div class="search-box">
+                <div class="search-input" style="font-size: 16px">{{form}}</div>
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+            </div>
+        </form>
+        {% for ph in pharmacy %}
+        <ul>
+            <li><p id = "first">{{ph.pharm_name}}</p></li>
+        </ul>
+        <p id="second">{{ph.pharm_city}}</p>
+        <p id="third">{{ph.pharm_working_schedule}}</p>
+        <p id="fourth"><i class="bi bi-phone-fill"></i>{{ph.pharm_telephone}}</p>
+        <hr>
+        {% endfor %}
+    </div>
+</div>
+<div id="map" class="map">{{m|safe}}</div>
+</body>
+{%endblock%}

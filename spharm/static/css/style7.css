@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander&display=swap");
+
+body {
+    background-color: #E5F4F4;
+}
+
+body {
+    font-family: "Palatino", serif;
+    font-size: 20px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    position: -webkit-sticky; /* Safari & IE */
+    position: sticky;
+    top: 0;
+}
+
+.side-nav,
+.nav-menu {
+    height: 100%;
+    position: -webkit-sticky; /* Safari & IE */
+    position: sticky;
+    top: 0;
+}
+
+.side-nav .nav-menu {
+    list-style: none;
+    margin-left: -160px;
+    padding: 40px 0;
+    width: 120px;
+    background: linear-gradient(#09C6F9, #045DE9);
+}
+
+.side-nav .nav-item {
+    position: relative;
+    padding: 10px 20px;
+}
+
+.menu-text {
+    margin-left: -15px;
+}
+
+.nav-item.active {
+    background-color: #E5F4F4;
+    box-shadow: 0px -3px rgba(0, 0, 0, 0.2), 0px 3px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item.active a {
+    color: #2980b9;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.menu-text {
+    padding: 0 20px;
+}
+
+.side-nav .nav-item.active::before {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    bottom: 100%;
+    right: 0;
+    height: 150%;
+    width: 20px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 0 20px 0 0 #E5F4F4;
+}
+
+.side-nav .nav-item.active::after {
+    content: "";
+    position: absolute;
+    background-color: transparent;
+    top: 100%;
+    right: 0;
+    height: 150%;
+    width: 20px;
+    border-top-right-radius: 25px;
+    box-shadow: 0 -20px 0 0 #E5F4F4;
+}
+
+.header {
+    position: absolute;
+    width: 195px;
+    height: 59px;
+    left: 162px;
+    top: 26px;
+    font-family: Rufina, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 59px;
+}
+
+.select-box {
+  cursor: pointer;
+  position : relative;
+  max-width:  20em;
+  margin: 5em auto;
+  width: 100%;
+}
+
+.select,
+.label {
+  color: #414141;
+  display: block;
+  font: 400 17px/2em 'Source Sans Pro', sans-serif;
+}
+
+.select {
+  width: 100%;
+  top: 0;
+  padding: 5px 0;
+  height: 40px;
+  opacity: 0;
+  background: none transparent;
+  border: 0 none;
+}
+.select-box1 {
+  background: #ececec;
+}
+
+.label {
+  position: relative;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.open .label::after {
+   content: "▲";
+}
+.label::after {
+  content: "▼";
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 5px 15px;
+  border-left: 5px solid #fff;
+}

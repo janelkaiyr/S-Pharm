@@ -1,0 +1,26 @@
+.listings #first {
+    font-size: 24px;
+    font-family: Cambria, serif;
+    color: #365FED;
+    font-weight: bold;
+}
+
+.listings p {
+    margin-left: 5%;
+}
+
+.listings #second, #third{
+    font-size: 20px;
+    font-family: Cambria, serif;
+    display: inline-flex;
+}
+
+.listings #third{
+    color: #146c43;
+    font-weight: bolder;
+}
+
+.listings #fourth{
+    font-size: 20px;
+    font-family: Cambria, serif;
+}
